@@ -32,11 +32,13 @@ A basic webpack configuration template for web development projects with separat
 ## Installed Packages
 
 ### Core
+
 - `webpack` - Module bundler
 - `webpack-cli` - Command line interface
 - `webpack-dev-server` - Development server with live reloading
 
 ### Loaders & Plugins
+
 - `css-loader` - Resolves CSS imports
 - `style-loader` - Injects CSS into DOM (development)
 - `mini-css-extract-plugin` - Extracts CSS to separate files (production)
@@ -45,11 +47,13 @@ A basic webpack configuration template for web development projects with separat
 ## Configuration Highlights
 
 **Development Mode:**
+
 - CSS injected via `style-loader` for hot reloading
 - Source maps for debugging
 - File watching enabled
 
 **Production Mode:**
+
 - CSS extracted to separate files with content hashing
 - Clean dist folder on each build
 - Optimized bundle sizes
