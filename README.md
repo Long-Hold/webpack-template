@@ -1,68 +1,66 @@
 # Webpack Template
 
-A basic webpack configuration template for web development projects with separate development and production builds.
+A webpack 5 starter template with split development/production configurations, testing, linting, and formatting.
 
 ## Features
 
-- **Hot Reload Development Server** - Live reloading during development
-- **Production Optimization** - CSS extraction and minification for production builds
-- **HTML Template Processing** - Automatic HTML generation with asset injection
-- **Asset Management** - Image and static file handling
-- **CSS Processing** - CSS loading with dev/prod optimization
+- Separate webpack configurations for development and production
+- Development server with live reloading and source maps
+- Production builds with CSS extraction and content hashing
+- Jest testing with JSDOM environment
+- Babel transpilation via @babel/preset-env
+- ESLint 9 with flat configuration format
+- Prettier code formatting
+- Image asset handling (png, svg, jpg, jpeg, gif)
+- CSS with modern-normalize baseline
+- GitHub Pages deployment
 
 ## Project Structure
 
 ```
 ├── src/
-│   ├── index.js          # Entry point
-│   ├── template.html     # HTML template
+│   ├── index.js
+│   ├── template.html
 │   └── styles/
-│       └── styles.css    # Stylesheet with basic reset
-├── webpack.common.js     # Shared webpack configuration
-├── webpack.dev.js        # Development configuration
-├── webpack.prod.js       # Production configuration
+│       └── styles.css
+├── webpack.common.js
+├── webpack.dev.js
+├── webpack.prod.js
+├── eslint.config.mjs
+├── babel.config.js
+├── jest.config.js
 └── package.json
 ```
 
 ## Scripts
 
-- **`npm start`** - Starts development server with hot reload at `http://localhost:8080`
-- **`npm run build`** - Creates optimized production build in `dist/` folder
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server at localhost:8080 |
+| `npm run build` | Create production build in `dist/` |
+| `npm run test` | Run Jest test suite |
+| `npm run format` | Format code with Prettier |
+| `npm run deploy` | Build and deploy to GitHub Pages |
 
-## Installed Packages
+## Configuration Details
 
-### Core
+**Development**
+- CSS injected via style-loader for fast refresh
+- Inline source maps for debugging
+- HTML template file watching
 
-- `webpack` - Module bundler
-- `webpack-cli` - Command line interface
-- `webpack-dev-server` - Development server with live reloading
-
-### Loaders & Plugins
-
-- `css-loader` - Resolves CSS imports
-- `style-loader` - Injects CSS into DOM (development)
-- `mini-css-extract-plugin` - Extracts CSS to separate files (production)
-- `html-webpack-plugin` - Generates HTML files with bundled assets
-
-## Configuration Highlights
-
-**Development Mode:**
-
-- CSS injected via `style-loader` for hot reloading
-- Source maps for debugging
-- File watching enabled
-
-**Production Mode:**
-
+**Production**
 - CSS extracted to separate files with content hashing
-- Clean dist folder on each build
-- Optimized bundle sizes
+- Output directory cleaned on each build
+- Automatic HTML asset injection
 
-## Getting Started
+## Usage
 
 1. Clone or download this template
-2. Run `npm install` to install dependencies
-3. Start developing with `npm start`
-4. Build for production with `npm run build`
+2. Run `npm install`
+3. Run `npm run dev` to start developing
+4. Run `npm run build` when ready for production
 
-This template provides a solid foundation for webpack-based projects with modern development workflows.
+## License
+
+ISC
